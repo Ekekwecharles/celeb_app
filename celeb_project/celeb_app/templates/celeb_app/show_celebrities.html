@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>Celebrity Contest</h1>
+<h1>Who's the most beautiful celebrity, and who has the most fans?</h1>
+<div class="celebrities">
+    {% for celebrity in celebrities %}
+        <div class="celebrity-block">
+            <h2>{{ celebrity.name }}</h2>
+            <img src="{{ celebrity.image.url }}" alt="{{ celebrity.name }}">
+            <button onclick="vote('{{ celebrity.id }}')">Vote</button>
+            <p>Votes: {{ celebrity.votes }}</p>
+        </div>
+    {% endfor %}
+</div>
+<script>
+    function vote(celebrityId) {
+        // Handle voting logic using JavaScript/AJAX
+        // You may make an AJAX call to the 'vote_celebrity' URL
+        alert('Vote recorded for Celebrity ' + celebrityId);
+    }
+</script>
+
+{% endblock %}
+
+
