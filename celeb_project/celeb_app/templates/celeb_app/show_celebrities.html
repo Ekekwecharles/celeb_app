@@ -9,18 +9,22 @@
             <div class="celebrity-block">
                 <h2>{{ celebrity.name }}</h2>
                 <img src="{{ celebrity.image.url }}" alt="{{ celebrity.name }}">
-                <button onclick="vote('{{ celebrity.id }}')">Vote</button>
-                <p>Votes: {{ celebrity.votes }}</p>
+                <div class="vote-container">
+                    <button onclick="vote('{{ celebrity.id }}')">Vote</button>
+                    <p class="votes">Votes: {{ celebrity.votes }}</p>
+                </div>
             </div>
         {% endfor %}
     </div>
 </div>
-<script>
+<script> 
     function vote(celebrityId) {
-        // Handle voting logic using JavaScript/AJAX
-        // You may make an AJAX call to the 'vote_celebrity' URL
-        alert('Vote recorded for Celebrity ' + celebrityId);
+        let token = prompt('Enter your token:');
+        if (token) {
+            window.location.href = `/enter_token/?celebrity_id=${celebrityId}&token=${token}`;
+        }
     }
+    
 </script>
 
 {% endblock %}

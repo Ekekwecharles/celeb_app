@@ -157,8 +157,16 @@ body {
   }
 
 h1 {
-    color: #3498db;
+    color: #4da36e;
+    text-align: center;
+    font-family: 'Black Jack', cursive; 
+    font-weight: bold;
+
 }
+h2 {
+  color: black;
+}
+
 
 .celebrities {
     display: flex;
@@ -174,7 +182,7 @@ h1 {
     padding: 10px;
     text-align: center;
     width: 1000px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .celebrity-block img {
@@ -184,7 +192,7 @@ h1 {
     height: fit-content;
 }
 
-button {
+.vote-container button {
     background-color: #3498db;
     color: white;
     padding: 10px;
@@ -198,4 +206,34 @@ button:hover {
 
 
 
+.vote-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.vote-container button {
+  margin-right: 100px; /* Adjust as needed */
+  padding: 10px 20px; /* Adjust padding for desired size */
+  font-size: 28px; /* Adjust font size for desired size */
+  width: 300px;
+  border-radius: 6px;
+}
+
+.vote-container p {
+  font-weight: bold;
+  color: #ff3300;
+  font-family: 'Black Jack', cursive; 
+
+}
+
+
+.alert {
+  position: fixed;
+  left: 50%;
+  top: 180px;
+  transform: translate(-50%, -50%);
+
+
+  z-index: 99999;
+}
